@@ -19,7 +19,8 @@ const SignIn = () => {
               <input
                 type="email"
                 name="email"
-                className="block w-full px-4 py-2 mt-2 text-error bg-white border rounded-md focus:border-error focus:ring-error focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-600 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+                required
               />
             </div>
             <div className="mb-2">
@@ -29,7 +30,7 @@ const SignIn = () => {
               <input
                 type="password"
                 name="password"
-                className="block w-full px-4 py-2 mt-2 text-error bg-white border rounded-md focus:border-error focus:ring-error focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-600 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <a href="#" className="text-xs text-blue-600 hover:underline">
@@ -37,7 +38,7 @@ const SignIn = () => {
             </a>
             <div className="mt-6">
               <button
-                className="w-full  btn btn-primary btn-outline"
+                className="w-full  block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
                 type="submit"
               >
                 Sign in
