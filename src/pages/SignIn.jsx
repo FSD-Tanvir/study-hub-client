@@ -1,6 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import useAuth from "../hooks/useAuth";
 
 const SignIn = () => {
+  const { signInUser } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
+    //get field values
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    signInUser(email, password)
+      .then(() => {
+        toast.success("User logged in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
+
   return (
     <div>
       <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -8,7 +30,7 @@ const SignIn = () => {
           <h1 className="text-3xl font-semibold text-center text-blue-600 underline">
             Sign in Now!
           </h1>
-          <form className="mt-6">
+          <form onSubmit={handleSignIn} className="mt-6">
             <div className="mb-2">
               <label
                 htmlFor="email"
