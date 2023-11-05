@@ -66,7 +66,7 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-          <div className="sm:navbar-end">
+          <div>
             {user ? (
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
