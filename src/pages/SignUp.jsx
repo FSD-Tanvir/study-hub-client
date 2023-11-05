@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
+import SocialLogin from "../components/SocialLogin";
 
 const SignUp = () => {
   const { createUser, handleUpdateProfile } = useAuth();
@@ -46,7 +47,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+      <div className=" flex flex-col justify-center min-h-screen overflow-hidden">
         <div className="w-full p-6 m-auto bg-white rounded-md shadow-md md:max-w-lg lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-600 underline">
             Sign Up Now!
@@ -124,6 +125,7 @@ const SignUp = () => {
               Sign in
             </Link>
           </p>
+          <SocialLogin />
         </div>
       </div>
     </div>
