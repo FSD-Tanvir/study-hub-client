@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="drawer">
@@ -34,50 +36,31 @@ const Navbar = () => {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               {/* for active route text-blue-600 font-bold */}
-              <li>
-                <a
-                  className="text-sm font-semibold text-gray-400 hover:text-blue-600"
-                  href="#"
-                >
-                  Home{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-sm font-semibold text-gray-400 hover:text-blue-600"
-                  href="#"
-                >
-                  About Us
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-sm font-semibold text-gray-400 hover:text-blue-600"
-                  href="#"
-                >
-                  Services
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-sm font-semibold text-gray-400 hover:text-blue-600"
-                  href="#"
-                >
-                  Pricing
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-sm font-semibold text-gray-400 hover:text-blue-600"
-                  href="#"
-                >
-                  Contact
-                </a>
-              </li>
+              <Link to={"/"}>
+                <li className="text-sm font-semibold text-gray-400 hover:text-blue-600 ">
+                  Home
+                </li>
+              </Link>
+              <Link to={"/all-assignments"}>
+                <li className="text-sm font-semibold text-gray-400 hover:text-blue-600 ml-3">
+                  All Assignments
+                </li>
+              </Link>
+              <Link to={"/my-assignments"}>
+                <li className="text-sm font-semibold text-gray-400 hover:text-blue-600 ml-3">
+                  My Assignments
+                </li>
+              </Link>
+              <Link to={"/submitted-assignments"}>
+                <li className="text-sm font-semibold text-gray-400 hover:text-blue-600 ml-3">
+                  Submitted Assignments
+                </li>
+              </Link>
+              <Link to={"/create-assignment"}>
+                <li className="text-sm font-semibold text-gray-400 hover:text-blue-600 ml-3">
+                  Create Assignment
+                </li>
+              </Link>
             </ul>
           </div>
           {/* <div className="sm:navbar-end">
@@ -113,13 +96,14 @@ const Navbar = () => {
           )}
         </div> */}
           <div>
-            <button className="btn-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md">
-              Sign in
-            </button>
+            <Link to={"/sign-in"}>
+              <button className="btn-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+                Sign in
+              </button>
+            </Link>
           </div>
         </div>
         {/* Page content here */}
-        Content
       </div>
       <div className="drawer-side">
         <label
@@ -130,61 +114,44 @@ const Navbar = () => {
         <div className="menu p-4 w-80 min-h-full bg-base-200">
           <ul>
             {/* Sidebar content here */}
-            <li className="mb-1">
-              <a
-                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                href="#"
-              >
+            <Link to={"/"}>
+              <li className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded mb-1">
                 Home
-              </a>
-            </li>
-            <li className="mb-1">
-              <a
-                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                href="#"
-              >
-                About Us
-              </a>
-            </li>
-            <li className="mb-1">
-              <a
-                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                href="#"
-              >
-                Services
-              </a>
-            </li>
-            <li className="mb-1">
-              <a
-                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                href="#"
-              >
-                Pricing
-              </a>
-            </li>
-            <li className="mb-1">
-              <a
-                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                href="#"
-              >
-                Contact
-              </a>
-            </li>
+              </li>
+            </Link>
+            <Link to={"/all-assignments"}>
+              <li className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded mb-1">
+                All Assignments
+              </li>
+            </Link>
+            <Link to={"/my-assignments"}>
+              <li className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded mb-1">
+                My Assignments
+              </li>
+            </Link>
+            <Link to={"/submitted-assignments"}>
+              <li className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded mb-1">
+                Submitted Assignments
+              </li>
+            </Link>
+            <Link to={"/create-assignment"}>
+              <li className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded mb-1">
+                Create Assignment
+              </li>
+            </Link>
           </ul>
           <div className="mt-auto">
             <div className="pt-6 w-full">
-              <a
-                className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold  bg-gray-50 hover:bg-gray-100 rounded-xl"
-                href="#"
-              >
-                Sign in
-              </a>
-              <a
-                className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
-                href="#"
-              >
-                Sign Up
-              </a>
+              <Link to={"/sign-in"}>
+                <button className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold  bg-gray-50 hover:bg-gray-100 rounded-xl w-full">
+                  Sign in
+                </button>
+              </Link>
+              <Link to={"/sign-up"}>
+                <button className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl w-full">
+                  Sign Up
+                </button>
+              </Link>
             </div>
             <p className="my-4 text-xs text-center text-gray-400">
               <span>Copyright © StudyHub</span>
