@@ -7,18 +7,18 @@ import useAuth from "../hooks/useAuth";
 
 const CreateAssignment = () => {
   const [dueDate, setDueDate] = useState(null);
-  const {user} = useAuth()
+  const { user } = useAuth();
 
   const handleCreateAssignment = (e) => {
     e.preventDefault();
-    const form = e.target ;
+    const form = e.target;
     const title = form.title.value || null;
     const image = form.image.value || null;
     const description = form.description.value || null;
     const difficulty = form.difficulty.value || null;
     const marks = form.marks.value || null;
-    const email = user.email
-  
+    const email = user.email;
+
     const assignment = {
       title,
       image,

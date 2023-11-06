@@ -107,7 +107,7 @@ const Navbar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-4 w-80 min-h-full bg-base-200">
+        <div className="menu p-4 sm:w-80 min-h-full bg-base-200">
           <ul>
             {/* Sidebar content here */}
             <Link to={"/"}>

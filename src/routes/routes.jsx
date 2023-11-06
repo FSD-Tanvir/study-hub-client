@@ -10,6 +10,7 @@ import SignUp from "../pages/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
 
+
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,7 @@ const routes = createBrowserRouter([
       {
         path: "/all-assignments",
         element: <AllAssignments />,
+        loader: () => fetch("http://localhost:5000/api/v1/all-assignments"),
       },
       {
         path: "/my-assignments",
