@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Card = ({ assignment }) => {
-  const { title, image, difficulty, marks } = assignment || {};
+  const { _id, title, image, difficulty, marks } = assignment || {};
+
   return (
     <div>
       <div className="px-1 py-5 mx-auto lg:py-16 lg:px-12 flex flex-col">
@@ -26,12 +28,14 @@ const Card = ({ assignment }) => {
           </div>
 
           <div className="mt-4 sm:mt-6 flex justify-between ">
-            <button
-              className="  block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
-              type="submit"
-            >
-              View Details
-            </button>
+            <Link to={`/view-details/${_id}`}>
+              <button
+                className="  block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
+                type="submit"
+              >
+                View Details
+              </button>
+            </Link>
             <button
               className="  block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
               type="submit"

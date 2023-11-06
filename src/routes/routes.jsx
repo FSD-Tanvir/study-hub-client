@@ -9,6 +9,7 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
+import ViewDetails from "../pages/ViewDetails";
 
 
 const routes = createBrowserRouter([
@@ -43,6 +44,16 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/view-details/:id",
+        element: (
+          <PrivateRoute>
+            <ViewDetails />
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
+      },
+
       {
         path: "/sign-in",
         element: <SignIn />,
