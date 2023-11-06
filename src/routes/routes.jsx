@@ -8,11 +8,13 @@ import CreateAssignment from "../pages/CreateAssignment";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import NotFound from "../pages/NotFound";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <NotFound />,
     children: [
       {
         index: true,
