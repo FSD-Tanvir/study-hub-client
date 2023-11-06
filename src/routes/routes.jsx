@@ -10,6 +10,7 @@ import SignUp from "../pages/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
 import ViewDetails from "../pages/ViewDetails";
+import Update from "../pages/Update";
 
 
 const routes = createBrowserRouter([
@@ -53,7 +54,15 @@ const routes = createBrowserRouter([
         ),
         loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
       },
-
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <Update />
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
+      },
       {
         path: "/sign-in",
         element: <SignIn />,

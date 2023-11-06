@@ -36,12 +36,14 @@ const Card = ({ assignment }) => {
                 View Details
               </button>
             </Link>
+            <Link to={`/Update/${_id}`}>
             <button
               className="  block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
               type="submit"
             >
               Update Here
             </button>
+            </Link>
           </div>
         </div>
       </div>
