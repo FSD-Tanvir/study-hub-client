@@ -1,17 +1,50 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-
+import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
+import toast from "react-hot-toast";
+import useAuth from "../hooks/useAuth";
 
 const CreateAssignment = () => {
   const [dueDate, setDueDate] = useState(null);
+  const {user} = useAuth()
+
+  const handleCreateAssignment = (e) => {
+    e.preventDefault();
+    const form = e.target ;
+    const title = form.title.value || null;
+    const image = form.image.value || null;
+    const description = form.description.value || null;
+    const difficulty = form.difficulty.value || null;
+    const marks = form.marks.value || null;
+    const email = user.email
+  
+    const assignment = {
+      title,
+      image,
+      description,
+      difficulty,
+      marks,
+      dueDate,
+      email,
+    };
+    axios
+      .post("http://localhost:5000/api/v1/all-assignments", assignment)
+      .then((data) => {
+        if (data.data.insertedId) {
+          toast.success("Assignment Created Successfully");
+          form.reset();
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="w-full p-6 m-auto bg-white rounded-md shadow-md md:max-w-xl lg:max-w-3xl">
       <h1 className="text-3xl font-semibold text-center text-blue-600 underline ">
         Create an Assignment
       </h1>
-      <form className="form-control">
+      <form onSubmit={handleCreateAssignment} className="form-control">
         {/* title field */}
         <div className="mb-2">
           <label
