@@ -2,13 +2,14 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import TakeAssignment from "../components/modals/TakeAssignment";
 
 const ViewDetails = () => {
   const assignment = useLoaderData();
   const navigate = useNavigate();
   const { user } = useAuth();
   const userEmail = user.email;
-  const { _id, title, image, description, dueDate, difficulty, marks, email } =
+  const { _id, title, image, description, dueDate, difficulty, marks } =
     assignment || {};
 
   const handleDelete = (_id) => {
@@ -46,14 +47,7 @@ const ViewDetails = () => {
           </div>
 
           <div className="flex items-center justify-between">
-            <Link>
-              <button
-                className="  block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
-                type="submit"
-              >
-                Take Assignment
-              </button>
-            </Link>
+            <TakeAssignment assignment={assignment} />
             <span className="font-semibold">
               Due Date: {new Date(dueDate).toString().slice(3, 15)}
             </span>
@@ -64,7 +58,7 @@ const ViewDetails = () => {
       {/* if i want show delete button conditionally */}
 
       {/* <div>
-        {user.email === email ? (
+        {userEmail === email ? (
           <div className="text-center my-10">
             <Link>
               <button

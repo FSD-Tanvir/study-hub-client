@@ -12,7 +12,6 @@ import NotFound from "../pages/NotFound";
 import ViewDetails from "../pages/ViewDetails";
 import Update from "../pages/Update";
 
-
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -31,11 +30,19 @@ const routes = createBrowserRouter([
       },
       {
         path: "/my-assignments",
-        element: <MyAssignments />,
+        element: (
+          <PrivateRoute>
+            <MyAssignments />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/submitted-assignments",
-        element: <SubmittedAssignments />,
+        element: (
+          <PrivateRoute>
+            <SubmittedAssignments />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/create-assignment",
@@ -52,7 +59,8 @@ const routes = createBrowserRouter([
             <ViewDetails />
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -61,7 +69,8 @@ const routes = createBrowserRouter([
             <Update />
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
       },
       {
         path: "/sign-in",
