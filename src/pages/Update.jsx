@@ -42,7 +42,7 @@ const Update = () => {
         }
       })
       .catch((error) => {
-        console.error("Error:", error);
+        toast.error("Error:", error);
       });
   };
 
