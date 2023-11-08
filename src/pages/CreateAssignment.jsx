@@ -58,6 +58,7 @@ const CreateAssignment = () => {
             name="title"
             placeholder="Title"
             className="block w-full px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+            required
           />
         </div>
 
@@ -70,10 +71,11 @@ const CreateAssignment = () => {
             Image
           </label>
           <input
-            type="text"
+            type="url"
             name="image"
             placeholder="Image URL"
             className="block w-full px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+            required
           />
         </div>
 
@@ -91,6 +93,7 @@ const CreateAssignment = () => {
             rows={4}
             cols={40}
             className="block w-full px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+            required
           />
         </div>
         <div className="flex flex-col sm:flex-row justify-between sm:items-center">
@@ -101,6 +104,7 @@ const CreateAssignment = () => {
               id="difficulty"
               name="difficulty"
               className="  px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             >
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
@@ -114,6 +118,7 @@ const CreateAssignment = () => {
               id="marks"
               name="marks"
               className=" px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             >
               <option value="10">10</option>
               <option value="20">20</option>
@@ -130,6 +135,7 @@ const CreateAssignment = () => {
               dateFormat={"dd-MM-yyyy"}
               minDate={new Date()}
               className="w-[180px] px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             />
           </div>
         </div>

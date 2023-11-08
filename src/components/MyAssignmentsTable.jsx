@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Result from "./modals/Result";
 const MyAssignmentsTable = ({ data }) => {
   const myAssignments = data;
   return (
@@ -37,7 +38,7 @@ const MyAssignmentsTable = ({ data }) => {
                 <td className="font-bold text-gray-600 capitalize">{status}</td>
                 <td>{assignment.marks}</td>
                 <th>
-                  <button className="btn">Result</button>
+                  <Result myAssignment={myAssignment}/>
                 </th>
               </tr>
             );

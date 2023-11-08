@@ -6,6 +6,8 @@ const SubmittedAssignments = () => {
   const { user } = useAuth();
   const userEmail = user.email;
   const { data, isLoading } = useQuery({
+
+    
     queryKey: [userEmail],
     queryFn: async () => {
       const response = await fetch(
