@@ -1,9 +1,14 @@
+import Accordion from "../components/Faq";
+import Features from "../components/Features";
+import Hero from "../components/Hero";
 
 
 const Home = () => {
     return (
         <div>
-            home
+            <Hero/>
+            <Features/>
+            <Accordion/>
         </div>
     );
 };
