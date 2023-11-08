@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import GiveMark from "./modals/GiveMark";
 const SubmittedAssignmentsTable = ({ data }) => {
   const submittedAssignments = data;
   return (
@@ -34,10 +35,12 @@ const SubmittedAssignmentsTable = ({ data }) => {
                     </div>
                   </div>
                 </td>
-                <td className="font-bold text-gray-600 capitalize">{examineeName}</td>
+                <td className="font-bold text-gray-600 capitalize">
+                  {examineeName}
+                </td>
                 <td>{assignment.marks}</td>
                 <th>
-                  <button className="btn">Give Mark</button>
+                  <GiveMark submittedAssignment={submittedAssignment} />
                 </th>
               </tr>
             );
