@@ -1,11 +1,10 @@
 import useAuth from "../hooks/useAuth";
-import Table from "../components/MyAssignmentsTable";
+import MyAssignmentsTable from "../components/MyAssignmentsTable";
 import { useQuery } from "react-query";
 
 const MyAssignments = () => {
   const { user } = useAuth();
   const userEmail = user.email;
-
   const { data, isLoading } = useQuery({
     queryKey: [userEmail],
     queryFn: async () => {
@@ -28,8 +27,11 @@ const MyAssignments = () => {
   }
 
   return (
-    <div>
-      <Table data={data} />
+    <div className="w-full p-6 m-auto bg-white rounded-md shadow-md min-h-screen">
+      <h1 className="text-3xl font-semibold text-center text-blue-600 mb-3">
+        Here is Your All Assignments Which You Submitted
+      </h1>
+      <MyAssignmentsTable data={data} />
     </div>
   );
 };

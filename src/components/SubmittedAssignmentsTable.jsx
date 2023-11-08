@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-const MyAssignmentsTable = ({ data }) => {
-  const myAssignments = data;
+const SubmittedAssignmentsTable = ({ data }) => {
+  const submittedAssignments = data;
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -8,17 +8,17 @@ const MyAssignmentsTable = ({ data }) => {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Status</th>
+            <th>Examinee</th>
             <th>Marks</th>
-            <th>Result</th>
+            <th>Give Mark</th>
           </tr>
         </thead>
         <tbody>
           {/* rows*/}
-          {myAssignments.map((myAssignment) => {
-            const { assignment, status } = myAssignment;
+          {submittedAssignments.map((submittedAssignment) => {
+            const { assignment, examineeName } = submittedAssignment;
             return (
-              <tr key={myAssignment._id}>
+              <tr key={submittedAssignment._id}>
                 <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -34,10 +34,10 @@ const MyAssignmentsTable = ({ data }) => {
                     </div>
                   </div>
                 </td>
-                <td className="font-bold text-gray-600 capitalize">{status}</td>
+                <td className="font-bold text-gray-600 capitalize">{examineeName}</td>
                 <td>{assignment.marks}</td>
                 <th>
-                  <button className="btn">Result</button>
+                  <button className="btn">Give Mark</button>
                 </th>
               </tr>
             );
@@ -48,8 +48,8 @@ const MyAssignmentsTable = ({ data }) => {
   );
 };
 
-MyAssignmentsTable.propTypes = {
+SubmittedAssignmentsTable.propTypes = {
   data: PropTypes.array,
 };
 
-export default MyAssignmentsTable;
+export default SubmittedAssignmentsTable;
