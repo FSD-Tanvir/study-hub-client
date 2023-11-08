@@ -9,7 +9,7 @@ const ViewDetails = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const userEmail = user.email;
-  const { _id, title, image, description, dueDate, difficulty, marks } =
+  const { _id, title, image, description, dueDate, difficulty, marks, email } =
     assignment || {};
 
   const handleDelete = (_id) => {
@@ -47,7 +47,11 @@ const ViewDetails = () => {
           </div>
 
           <div className="flex items-center justify-between">
-            <TakeAssignment assignment={assignment} />
+            {userEmail !== email ? (
+              <TakeAssignment assignment={assignment} />
+            ) : (
+              <div></div>
+            )}
             <span className="font-semibold">
               Due Date: {new Date(dueDate).toString().slice(3, 15)}
             </span>
