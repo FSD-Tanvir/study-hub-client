@@ -6,8 +6,6 @@ const SubmittedAssignments = () => {
   const { user } = useAuth();
   const userEmail = user.email;
   const { data, isLoading } = useQuery({
-
-    
     queryKey: [userEmail],
     queryFn: async () => {
       const response = await fetch(
@@ -23,7 +21,9 @@ const SubmittedAssignments = () => {
   if (isLoading) {
     return (
       <div className="h-screen flex justify-center items-center">
-        <h1 className="text-3xl font-semibold md:text-7xl">Loading...</h1>
+        <h1 className="text-3xl font-semibold md:text-7xl">
+          <span className="loading loading-spinner text-info"></span>
+        </h1>
       </div>
     );
   }

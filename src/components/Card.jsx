@@ -10,7 +10,7 @@ const Card = ({ assignment }) => {
         <img
           className="rounded-lg h-56 object-cover"
           src={image}
-          alt="WorkCation"
+          alt="image"
         />
 
         <div className="px-2">
