@@ -11,7 +11,7 @@ const AllAssignments = () => {
       </h1>
       <div className="grid md:grid-cols-2 gap-2">
         {allAssignments.map((assignment) => {
-          return <Card key={assignment.id} assignment={assignment} />;
+          return <Card key={assignment._id} assignment={assignment} />;
         })}
       </div>
     </div>
