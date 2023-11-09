@@ -2,9 +2,11 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import PropTypes from "prop-types";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const TakeAssignment = ({ assignment }) => {
   const { user } = useAuth();
+  const navigate = useNavigate()
 
   const handleSubmitAssignment = (e) => {
     e.preventDefault();
@@ -34,6 +36,7 @@ const TakeAssignment = ({ assignment }) => {
       .then((data) => {
         if (data.data.insertedId) {
           toast.success("Assignment Submitted Successfully");
+          navigate('/all-assignments')
         }
       })
       .catch((error) => console.log(error));
