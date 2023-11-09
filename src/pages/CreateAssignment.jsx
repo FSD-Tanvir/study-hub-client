@@ -29,7 +29,7 @@ const CreateAssignment = () => {
       email,
     };
     axios
-      .post("http://localhost:5000/api/v1/all-assignments", assignment)
+      .post("https://studyhub-server.vercel.app/api/v1/all-assignments", assignment)
       .then((data) => {
         if (data.data.insertedId) {
           toast.success("Assignment Created Successfully");

@@ -14,7 +14,7 @@ const ViewDetails = () => {
 
   const handleDelete = (_id) => {
     axios
-      .delete(`http://localhost:5000/api/v1/all-assignments/${_id}`, {
+      .delete(`https://studyhub-server.vercel.app/api/v1/all-assignments/${_id}`, {
         data: { userEmail }, // Use a data property to pass the email
       })
       .then((response) => {

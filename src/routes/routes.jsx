@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
       {
         path: "/all-assignments",
         element: <AllAssignments />,
-        loader: () => fetch("http://localhost:5000/api/v1/all-assignments"),
+        loader: () => fetch("https://studyhub-server.vercel.app/api/v1/all-assignments"),
       },
       {
         path: "/my-assignments",
@@ -61,7 +61,7 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
+          fetch(`https://studyhub-server.vercel.app/api/v1/all-assignments/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -71,7 +71,7 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/all-assignments/${params.id}`),
+          fetch(`https://studyhub-server.vercel.app/api/v1/all-assignments/${params.id}`),
       },
       {
         path: "/sign-in",
@@ -89,7 +89,7 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/submitted-assignments/${params.id}`),
+          fetch(`https://studyhub-server.vercel.app/api/v1/submitted-assignments/${params.id}`),
       },
     ],
   },

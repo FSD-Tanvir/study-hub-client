@@ -24,7 +24,7 @@ const GiveMark = ({ submittedAssignment }) => {
     };
     axios
       .put(
-        `http://localhost:5000/api/v1/submitted-assignments/${submittedAssignment._id}`,
+        `https://studyhub-server.vercel.app/api/v1/submitted-assignments/${submittedAssignment._id}`,
         markedAssignment
       )
       .then((response) => {

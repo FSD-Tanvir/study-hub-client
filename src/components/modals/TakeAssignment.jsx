@@ -30,7 +30,7 @@ const TakeAssignment = ({ assignment }) => {
     };
     axios
       .post(
-        "http://localhost:5000/api/v1/submitted-assignments",
+        "https://studyhub-server.vercel.app/api/v1/submitted-assignments",
         submittedAssignment
       )
       .then((data) => {

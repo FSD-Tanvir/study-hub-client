@@ -34,7 +34,7 @@ const Update = () => {
     };
     axios
       .put(
-        `http://localhost:5000/api/v1/all-assignments/${loadedAssignment._id}`,
+        `https://studyhub-server.vercel.app/api/v1/all-assignments/${loadedAssignment._id}`,
         assignment
       )
       .then((response) => {
