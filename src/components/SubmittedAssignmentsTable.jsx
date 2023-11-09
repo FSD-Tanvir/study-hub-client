@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import GiveMark from "./modals/GiveMark";
+import { Link } from "react-router-dom";
 const SubmittedAssignmentsTable = ({ data }) => {
   const submittedAssignments = data;
   return (
@@ -40,7 +40,11 @@ const SubmittedAssignmentsTable = ({ data }) => {
                 </td>
                 <td>{assignment.marks}</td>
                 <td>
-                  <GiveMark submittedAssignment={submittedAssignment} />
+                  <Link to={`/give-mark/${submittedAssignment._id}`}>
+                  <button  className="btn block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl">
+                    Give Mark
+                  </button>
+                  </Link>
                 </td>
               </tr>
             );

@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
 import ViewDetails from "../pages/ViewDetails";
 import Update from "../pages/Update";
+import GiveMark from "../pages/GiveMark";
 
 const routes = createBrowserRouter([
   {
@@ -79,6 +80,16 @@ const routes = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp />,
+      },
+      {
+        path: "/give-mark/:id",
+        element: (
+          <PrivateRoute>
+            <GiveMark />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/api/v1/submitted-assignments/${params.id}`),
       },
     ],
   },
