@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Result from "./modals/Result";
 const MyAssignmentsTable = ({ data }) => {
   const myAssignments = data;
   return (
@@ -11,13 +10,14 @@ const MyAssignmentsTable = ({ data }) => {
             <th>Title</th>
             <th>Status</th>
             <th>Marks</th>
-            <th>Result</th>
+            <th>Your Obtain Marks</th>
+            <th>Feedback</th>
           </tr>
         </thead>
         <tbody>
           {/* rows*/}
           {myAssignments.map((myAssignment) => {
-            const { assignment, status } = myAssignment;
+            const { assignment, status, marks, feedback } = myAssignment;
             return (
               <tr key={myAssignment._id}>
                 <td>
@@ -37,9 +37,12 @@ const MyAssignmentsTable = ({ data }) => {
                 </td>
                 <td className="font-bold text-gray-600 capitalize">{status}</td>
                 <td>{assignment.marks}</td>
-                <th>
-                  <Result myAssignment={myAssignment}/>
-                </th>
+                <td>{marks}</td>
+                <td>
+                  <div className="max-w-xs flex flex-wrap items-center ">
+                    {feedback}
+                  </div>
+                </td>
               </tr>
             );
           })}

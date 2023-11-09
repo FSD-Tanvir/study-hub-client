@@ -17,7 +17,7 @@ const SubmittedAssignmentsTable = ({ data }) => {
         <tbody>
           {/* rows*/}
           {submittedAssignments.map((submittedAssignment) => {
-            const { assignment, examineeName } = submittedAssignment;
+            const { assignment, examineeName, } = submittedAssignment;
             return (
               <tr key={submittedAssignment._id}>
                 <td>
@@ -39,9 +39,9 @@ const SubmittedAssignmentsTable = ({ data }) => {
                   {examineeName}
                 </td>
                 <td>{assignment.marks}</td>
-                <th>
+                <td>
                   <GiveMark submittedAssignment={submittedAssignment} />
-                </th>
+                </td>
               </tr>
             );
           })}
