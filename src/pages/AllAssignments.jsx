@@ -6,7 +6,6 @@ const AllAssignments = () => {
   const allData = useLoaderData([]);
   const [allAssignments, setAllAssignments] = useState(allData);
 
-  console.log(allAssignments);
   const handleFilter = (e) => {
     e.preventDefault();
     const form = e.target;

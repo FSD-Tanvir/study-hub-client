@@ -3,6 +3,7 @@ import axios from "axios";
 
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import PdfViewer from "../components/PdfViewer";
 
 const GiveMark = () => {
   const submittedAssignment = useLoaderData();
@@ -54,6 +55,9 @@ const GiveMark = () => {
           </span>{" "}
           {quickNote}
         </p>
+        <div className="mb-4">
+            <PdfViewer pdfLink={pdfLink} />
+          </div>
       </div>
       <form onSubmit={handleMarked}>
         {/* feedback field */}
