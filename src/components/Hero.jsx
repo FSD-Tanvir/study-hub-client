@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col md:flex-row-reverse items-center">
+      <div className="hero-content flex-col-reverse md:flex-row-reverse items-center">
         <div className="md:w-1/2 px-4">
           <img
             src="https://i.ibb.co/LNbCw9p/Hero-Students.webp"
-            className="max-w-full rounded-lg shadow-2xl h-96 object-cover"
+            className="max-w-full mx-auto rounded-lg shadow-2xl h-96 object-cover"
             alt="Students working"
           />
         </div>

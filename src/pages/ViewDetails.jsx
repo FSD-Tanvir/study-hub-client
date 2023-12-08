@@ -14,9 +14,12 @@ const ViewDetails = () => {
 
   const handleDelete = (_id) => {
     axios
-      .delete(`https://studyhub-server.vercel.app/api/v1/all-assignments/${_id}`, {
-        data: { userEmail }, // Use a data property to pass the email
-      })
+      .delete(
+        `https://studyhub-server.vercel.app/api/v1/all-assignments/${_id}`,
+        {
+          data: { userEmail }, // Use a data property to pass the email
+        }
+      )
       .then((response) => {
         if (response.data.deletedCount > 0) {
           toast.success(" Deleted Successfully");
@@ -46,7 +49,7 @@ const ViewDetails = () => {
             <span>Marks: {marks}</span>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             {userEmail !== email ? (
               <TakeAssignment assignment={assignment} />
             ) : (
@@ -61,13 +64,14 @@ const ViewDetails = () => {
 
       {/* if i want show delete button conditionally */}
 
-      {/* <div>
+      <div>
         {userEmail === email ? (
           <div className="text-center my-10">
             <Link>
               <button
                 className=" px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-red-600 hover:bg-red-700  rounded-xl "
                 type="submit"
+                onClick={() => handleDelete(_id)}
               >
                 Delete This Assignment
               </button>
@@ -76,9 +80,9 @@ const ViewDetails = () => {
         ) : (
           <div></div>
         )}
-      </div> */}
+      </div>
 
-      <div className="text-center my-10">
+      {/* <div className="text-center my-10">
         <Link>
           <button
             className=" px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-red-600 hover:bg-red-700  rounded-xl "
@@ -88,7 +92,7 @@ const ViewDetails = () => {
             Delete This Assignment
           </button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

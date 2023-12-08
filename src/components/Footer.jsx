@@ -4,6 +4,7 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-32">
           <div className="mx-auto max-w-sm lg:max-w-none">
+            <h1 className="text-2xl font-semibold">Follow us</h1>
             <div className="mt-6 flex justify-center gap-4 lg:justify-start">
               <a
                 className="text-gray-700 transition hover:text-gray-700/75"

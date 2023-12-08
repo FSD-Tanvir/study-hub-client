@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const TakeAssignment = ({ assignment }) => {
   const { user } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmitAssignment = (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ const TakeAssignment = ({ assignment }) => {
     const examineeName = user.displayName;
     const examineeEmail = user.email;
     const marks = "not given yet";
-    const feedback = "not given yet"
+    const feedback = "not given yet";
     const submittedAssignment = {
       pdfLink,
       quickNote,
@@ -36,7 +36,7 @@ const TakeAssignment = ({ assignment }) => {
       .then((data) => {
         if (data.data.insertedId) {
           toast.success("Assignment Submitted Successfully");
-          navigate('/all-assignments')
+          navigate("/all-assignments");
         }
       })
       .catch((error) => console.log(error));
@@ -45,7 +45,7 @@ const TakeAssignment = ({ assignment }) => {
   return (
     <div>
       <button
-        className="btn block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
+        className="btn block px-4 sm:py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
         onClick={() => document.getElementById("my_modal_4").showModal()}
       >
         Take Assignment
