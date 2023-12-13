@@ -1,9 +1,6 @@
 import axios from "axios";
-// import { useState } from "react";
-
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import PdfViewer from "../components/PdfViewer";
 
 const GiveMark = () => {
   const submittedAssignment = useLoaderData();
@@ -43,28 +40,46 @@ const GiveMark = () => {
         Check Assignment and Give Mark here...
       </h3>
       <div className="m-2 text-gray-800 font-normal">
-        <p className=" mb-4">
-          <span className=" text-sm font-semibold  text-gray-800">
-            PDF Link:
-          </span>{" "}
-          {pdfLink}
-        </p>
+        <div className="mb-4">
+          <span className="text-sm font-semibold text-gray-800">PDF Link:</span>{" "}
+          <a
+            href={pdfLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline"
+          >
+            Open PDF
+          </a>
+        </div>
         <p className="mb-4">
-          <span className=" text-sm font-semibold  text-gray-800">
+          <span className="text-sm font-semibold text-gray-800">
             Note Given by Examinee:
           </span>{" "}
           {quickNote}
         </p>
-        <div className="mb-4">
-            <PdfViewer pdfLink={pdfLink} />
-          </div>
+        <p className="mb-4">
+          <span className="text-sm font-semibold text-gray-800">
+            See PDF Preview Below:
+          </span>{" "}
+          {quickNote}
+        </p>
+        <div className="mb-4 border">
+          {/* Replace PdfViewer component with iframe */}
+          <iframe
+            title="PDF Viewer"
+            src={pdfLink}
+            width="100%"
+            height="400px"
+            frameBorder="1"
+          ></iframe>
+        </div>
       </div>
       <form onSubmit={handleMarked}>
         {/* feedback field */}
         <div className="m-2">
           <label
             htmlFor="feedback"
-            className="block text-sm font-semibold  text-gray-800"
+            className="block text-sm font-semibold text-gray-800"
           >
             Give Assignment Feedback Here...
           </label>
@@ -88,13 +103,13 @@ const GiveMark = () => {
           <input
             type="number"
             name="marks"
-            className="block  px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40 font-normal text-black"
+            className="block px-4 py-2 mt-2 bg-white border rounded-md focus:border-blue focus:ring-blue focus:outline-none focus:ring focus:ring-opacity-40 font-normal text-black"
             required
           />
         </div>
 
         <button
-          className="block px-6 py-2 m-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-md"
+          className="block px-6 py-2 m-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700 rounded-md"
           type="submit"
         >
           Marked
