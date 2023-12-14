@@ -30,7 +30,6 @@ This single-page application built in MERN stack (MongoDB, Express, React, and N
 * **Frontend:** React, React Router DOM, react-hot-toast, react-datepicker
 * **Backend:** Firebase (authentication), Node.js. Express.js
 * **Database:** MongoDB
-* **Additional:** HTML, CSS, JavaScript
 
 **Note:** This README.md provides a high-level overview of the project. For detailed implementation details, please refer to the project code and documentation.
 
