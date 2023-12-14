@@ -35,12 +35,6 @@ This single-page application built in MERN stack (MongoDB, Express, React, and N
 
 **Feel free to explore and contribute to this exciting platform for collaborative learning!**
 
-**Additional Tips:**
-
-* You can further customize this README.md with screenshots, diagrams, and links to relevant resources.
-* Consider adding a section on installation and deployment instructions.
-* Mention any known limitations or future development plans.
-
 ## Necessary Links Below :
 
 **Live Site:** https://study-hub-fa95a.web.app/
