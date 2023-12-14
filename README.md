@@ -28,7 +28,7 @@ This single-page application built in MERN stack (MongoDB, Express, React, and N
 **Technologies Used:**
 
 * **Frontend:** React, React Router DOM, react-hot-toast, react-datepicker
-* **Backend:** Firebase (authentication)
+* **Backend:** Firebase (authentication), Node.js. Express.js
 * **Database:** MongoDB
 * **Additional:** HTML, CSS, JavaScript
 
