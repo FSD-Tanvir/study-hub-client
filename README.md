@@ -21,7 +21,7 @@ This single-page application built in MERN stack (MongoDB, Express, React, and N
 * **Dynamic Pages:**
     * Home, Create assignment, All assignments, My assignments, Submitted assignments, Update assignment, Single assignment view, Login, and Registration.
 
-* **Document/PDF Preview:** View submitted assignment PDFs in a modal on the Submitted assignments page.
+* **Document/PDF Preview:** Users can also review submitted PDFs in a dedicated iframe on the grading page, providing targeted feedback and enhancing the learning experience.
 * **Validation:** Ensure data integrity through form validations in create assignment and registration forms.
 * **Responsiveness:** Mobile, tablet, and desktop-friendly layout.
 
